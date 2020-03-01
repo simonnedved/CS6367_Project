@@ -1,7 +1,9 @@
 # CS6367_Project
-The course project of CS6367.
+This is the course project of CS6367.
 
-Dependency:
+---
+
+<h2>Dependency:
 
 JDK:
 
