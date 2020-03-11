@@ -13,9 +13,7 @@ public class Agent {
         inst.addTransformer(new ClassTransformer("com/sampullara/cli"));
         inst.addTransformer(new ClassTransformer("eu/danieldk/dictomaton"));
         inst.addTransformer(new ClassTransformer("com/github/vbauer/caesar/"));
-
         inst.addTransformer(new ClassTransformer("org/trendafilov/confucius"));
-
         inst.addTransformer(new ClassTransformer("io/gsonfire/"));
     }
 }
