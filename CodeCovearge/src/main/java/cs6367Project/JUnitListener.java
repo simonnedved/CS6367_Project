@@ -5,13 +5,11 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 
 import org.junit.runner.Description;
 import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
 
 public class JUnitListener extends RunListener {
@@ -19,15 +17,14 @@ public class JUnitListener extends RunListener {
     @Override
     public void testRunStarted(Description description) throws Exception {
         super.testRunStarted(description);
-        // read the singleton instance into global variable
         CoverageCollection.testSuite = new HashMap<>();
     }
 
     @Override
     public void testRunFinished(Result result) throws Exception {
         super.testRunFinished(result);
-        String dir = "logs";
-        String logPath = dir + File.separator + "logs.txt";
+        String dir = "coverageLog";
+        String logPath = dir + File.separator + "stmt-cov.txt";
         try {
             File directory = new File(dir);
             if (! directory.exists()){

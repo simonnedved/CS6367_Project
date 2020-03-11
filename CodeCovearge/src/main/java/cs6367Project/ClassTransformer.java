@@ -1,11 +1,9 @@
 package cs6367Project;
 
-
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
 
 public class ClassTransformer implements ClassFileTransformer {
@@ -16,17 +14,15 @@ public class ClassTransformer implements ClassFileTransformer {
         this.packageName = packageName;
     }
 
-    public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
+    public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) {
         if (className.startsWith(packageName)){
             ClassReader cr = new ClassReader(classfileBuffer);
             ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
             ClassTransformVisitor ca = new ClassTransformVisitor(cw, className);
             cr.accept(ca, 0);
-            //System.out.println("================================From package");
             return cw.toByteArray();
         }
 
-        //System.out.println("================================From outside. Class name: " + className +  ", package: " + packageName);
         return classfileBuffer;
     }
 }

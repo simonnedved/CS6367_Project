@@ -1,9 +1,7 @@
 package cs6367Project;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.Set;
 
 public class CoverageCollection {
     public static HashMap<String, HashMap<String, LinkedHashSet<Integer>>> testSuite;
