@@ -1,6 +1,7 @@
 Changes :
-1.	"/<"source>1.7"<//source>"
-	"<target>1.7</target>"
+1.	Compiler change version:
+	Change source to 1.7
+	Change target to 1.7
 	
 
 Selected Tests:
