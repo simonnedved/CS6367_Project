@@ -1,19 +1,25 @@
-[spring-data-commons](https://github.com/spring-projects/spring-data-commons)
+Changes :
+1.	<source>1.7</source>
+	 <target>1.7</target>
 
-[spring-data-envers](https://github.com/spring-projects/spring-data-envers) 
 
-[spring-data-jpa](https://github.com/spring-projects/spring-data-jpa)
 
-[spring-data-solr](https://github.com/spring-projects/spring-data-solr) 
+https://github.com/apache/commons-dbutils
 
-[spring-elasticsearch](https://github.com/dadoonet/spring-elasticsearch)
+https://github.com/fordfrog/apgdiff.git (Change 1)
 
-[spring-hateoas](https://github.com/spring-projects/spring-hateoas)
+https://github.com/10cella/hashids-java.git (Change 1)
 
-[spring-mvc-31-demo](https://github.com/rstoyanchev/spring-mvc-31-demo) 
+https://github.com/klout/brickhouse.git (Change 1)
 
-[spring-mvc-chat](https://github.com/rstoyanchev/spring-mvc-chat)
+https://github.com/JakeWharton/byteunits.git
 
-[springmvc-router](https://github.com/resthub/springmvc-router) 
+https://github.com/spullara/cli-parser.git (Change 1)
 
-[spring-mvc-showcase](https://github.com/spring-projects/spring-mvc-showcase)
+https://github.com/danieldk/dictomaton.git
+
+https://github.com/vbauer/caesar.git
+
+https://github.com/IvanTrendafilov/Confucius.git
+
+https://github.com/julman99/gson-fire.git (Change 1)
