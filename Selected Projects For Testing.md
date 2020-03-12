@@ -9,11 +9,11 @@ https://github.com/fordfrog/apgdiff.git
 
 https://github.com/10cella/hashids-java.git 
 
-https://github.com/klout/brickhouse.git 
+https://github.com/atteo/evo-inflector
 
 https://github.com/JakeWharton/byteunits.git
 
-https://github.com/spullara/cli-parser.git 
+https://github.com/spullara/cli-parser.git  (1.6)
 
 https://github.com/danieldk/dictomaton.git
 
