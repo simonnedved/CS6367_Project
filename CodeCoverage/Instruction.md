@@ -44,5 +44,5 @@ mvn test
 If you come across a compilation failure which asks you to use the 1.6 or higher version of maven compiler, add the 
 following lines in pom.xml.
 
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
