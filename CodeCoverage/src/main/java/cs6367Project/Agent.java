@@ -8,7 +8,7 @@ public class Agent {
         inst.addTransformer(new ClassTransformer("org/joda/time/"));
         inst.addTransformer(new ClassTransformer("org/hashids/"));
         inst.addTransformer(new ClassTransformer("cz/startnet/utils/pgdiff/"));
-        inst.addTransformer(new ClassTransformer("brickhouse/"));
+        inst.addTransformer(new ClassTransformer("org/atteo/evo/"));
         inst.addTransformer(new ClassTransformer("com/jakewharton/byteunits"));
         inst.addTransformer(new ClassTransformer("com/sampullara/cli"));
         inst.addTransformer(new ClassTransformer("eu/danieldk/dictomaton"));
