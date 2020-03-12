@@ -12,7 +12,7 @@ public class CoverageCollection {
         if(testCase == null || className == null) return;
         LinkedHashSet<Integer> set = testCase.get(className);
         if(set == null) {
-            set = new LinkedHashSet<>();
+            set = new LinkedHashSet<Integer>();
         }
         set.add(line);
         testCase.put(className, set);

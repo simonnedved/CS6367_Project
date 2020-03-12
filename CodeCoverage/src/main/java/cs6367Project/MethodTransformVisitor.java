@@ -21,7 +21,7 @@ class MethodTransformVisitor extends MethodVisitor implements Opcodes {
         super(Opcodes.ASM5, mv);
         this.mName = name;
         this.className = className;
-        visitedLines = new HashSet<>();
+        visitedLines = new HashSet<Integer>();
     }
 
     @Override

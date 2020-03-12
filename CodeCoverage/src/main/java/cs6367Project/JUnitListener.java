@@ -17,7 +17,7 @@ public class JUnitListener extends RunListener {
     @Override
     public void testRunStarted(Description description) throws Exception {
         super.testRunStarted(description);
-        CoverageCollection.testSuite = new HashMap<>();
+        CoverageCollection.testSuite = new HashMap<String, HashMap<String, LinkedHashSet<Integer>>>();
     }
 
     @Override
@@ -59,7 +59,7 @@ public class JUnitListener extends RunListener {
     public void testStarted(Description description) throws Exception {
         super.testStarted(description);
         CoverageCollection.testName = "[TEST] " + description.getClassName() + ":" + description.getMethodName();
-        CoverageCollection.testCase = new HashMap<>();
+        CoverageCollection.testCase = new HashMap<String, LinkedHashSet<Integer>>();
     }
 
     @Override
