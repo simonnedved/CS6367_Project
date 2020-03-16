@@ -17,5 +17,4 @@ public class CoverageCollection {
         set.add(line);
         testCase.put(className, set);
     }
-
 }

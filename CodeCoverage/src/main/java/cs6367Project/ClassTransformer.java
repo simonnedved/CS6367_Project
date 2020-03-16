@@ -22,7 +22,6 @@ public class ClassTransformer implements ClassFileTransformer {
             cr.accept(ca, 0);
             return cw.toByteArray();
         }
-
         return classfileBuffer;
     }
 }

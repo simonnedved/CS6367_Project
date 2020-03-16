@@ -4,9 +4,6 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import java.util.HashSet;
-import org.objectweb.asm.Label;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
 
 
 
@@ -45,11 +42,4 @@ class MethodTransformVisitor extends MethodVisitor implements Opcodes {
         mv.visitMethodInsn(INVOKESTATIC, "cs6367Project/CoverageCollection", "visitLine", "(Ljava/lang/String;I)V", false);
     }
 
-    public HashSet<Integer> getVisitedLines() {
-        return visitedLines;
-    }
-
-    public void setVisitedLines(HashSet<Integer> visitedLines) {
-        this.visitedLines = visitedLines;
-    }
 }
