@@ -32,7 +32,15 @@ Add follwing lines in pom.xml:
   </configuration>
 </plugin>
 ```
-
+Modify JUnit version to 4.13:
+```
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.13</version>
+  <scope>test</scope>
+</dependency>
+```
 Get into the target project folder, and run:
 ```
 mvn test
