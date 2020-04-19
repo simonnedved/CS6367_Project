@@ -48,9 +48,11 @@ class MethodTransformVisitor extends MethodVisitor implements Opcodes {
         int offset =  (this.access & Opcodes.ACC_STATIC) != 0? 0 : 1;
 
         String variableName;
-        for (int i = 0; i < localVariableTypes.length; i++) {
-            variableName = variableNames != null ? variableNames[i + offset] : "variableName";
-            record(localVariableTypes[i].getDescriptor(),variableName,i+offset,"visitLocalVariable", 1,true);
+        if(variableNames!=null){
+            for (int i = 0; i < localVariableTypes.length; i++) {
+                variableName = variableNames != null ? variableNames[i + offset] : "variableName";
+                record(localVariableTypes[i].getDescriptor(),variableName,i+offset,"visitLocalVariable", 1,true);
+            }
         }
 
         super.visitCode();
@@ -68,12 +70,14 @@ class MethodTransformVisitor extends MethodVisitor implements Opcodes {
         } else if ("C".equals(desc)) {
             opcode = Opcodes.ILOAD;
             varType = "char";
-        } else if ("B".equals(desc)) {
-            opcode = Opcodes.ILOAD;
-            varType = "byte";
-        } else if ("S".equals(desc)) {
-            opcode = Opcodes.ILOAD;
-            varType = "short";
+//        } else if ("B".equals(desc)) {
+//            opcode = Opcodes.ILOAD;
+//            varType = "byte";
+//            desc="I";
+//        } else if ("S".equals(desc)) {
+//            opcode = Opcodes.ILOAD;
+//            varType = "short";
+//            desc="I";
         } else if ("I".equals(desc)) {
             opcode = Opcodes.ILOAD;
             varType = "int";

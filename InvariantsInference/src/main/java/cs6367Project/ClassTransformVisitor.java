@@ -27,9 +27,8 @@ class ClassTransformVisitor extends ClassVisitor implements Opcodes {
             ClassReader reader = new ClassReader(className);
             reader.accept(classNode, 0);
             this.fields = (List<FieldNode>)classNode.fields;
-        } catch (IOException ignored) {
+        } catch(IOException ignored) {
         }
-
     }
 
     @Override
