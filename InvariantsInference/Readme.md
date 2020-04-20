@@ -4,8 +4,7 @@ In command line run:
 ```
 cd CodeCoverage
 # these lines will create a JavaAgent jar file.
-mvn clean 
-mvn install
+mvn clean install
 ```
 ```
 # copy JavaAgent jar file to target project folder.
