@@ -8,9 +8,6 @@ import org.objectweb.asm.tree.FieldNode;
 
 import java.util.List;
 
-
-
-
 class MethodTransformVisitor extends MethodVisitor implements Opcodes {
 
     private String methodName;

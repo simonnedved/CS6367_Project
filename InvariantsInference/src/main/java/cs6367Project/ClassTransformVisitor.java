@@ -17,7 +17,7 @@ class ClassTransformVisitor extends ClassVisitor implements Opcodes {
     private String className;
     private ClassNode classNode;
     private List<FieldNode> fields;
-
+    @SuppressWarnings("unchecked")
     public ClassTransformVisitor(final ClassVisitor cv, final String className) {
         super(Opcodes.ASM5, cv);
         this.className = className;
@@ -30,7 +30,7 @@ class ClassTransformVisitor extends ClassVisitor implements Opcodes {
         } catch(IOException ignored) {
         }
     }
-
+    @SuppressWarnings("unchecked")
     @Override
     public MethodVisitor visitMethod(final int access, final String name, final String desc, final String signature, final String[] exceptions) {
         String[] localVariableNames = null;
