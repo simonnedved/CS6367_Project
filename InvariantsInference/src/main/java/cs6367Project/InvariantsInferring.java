@@ -168,8 +168,13 @@ public class InvariantsInferring{
     {
         List<Integer> temp = new LinkedList<Integer>();
         if (n <= 1) temp.add(-1);
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) temp.add(i);
+        if(n>200){
+            temp.add(-1);
+        }
+        else{
+            for (int i = 2; i < n; i++) {
+                if (n % i == 0) temp.add(i);
+            }
         }
         return temp;
     }
