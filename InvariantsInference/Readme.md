@@ -43,8 +43,9 @@ Modify JUnit version to 4.13:
 ```
 Get into the target project folder, and run:
 ```
-mvn test
-# Coverage log would be created in folder "coverageLog".
+mvn clean test
+# Trace log would be created in folder "6367TraceLog".
+# Infer log would be created in folder "6367InferLog".
 ```
 
 *Note:*
