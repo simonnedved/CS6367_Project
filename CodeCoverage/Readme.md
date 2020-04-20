@@ -4,8 +4,7 @@ In command line run:
 ```
 cd CodeCoverage
 # these lines will create a JavaAgent jar file.
-mvn clean 
-mvn install
+mvn clean install
 ```
 ```
 # copy JavaAgent jar file to target project folder.
@@ -42,8 +41,8 @@ Modify JUnit version to 4.13:
 ```
 Get into the target project folder, and run:
 ```
-mvn test
-# Coverage log would be created in folder "coverageLog".
+mvn clean test
+# Coverage log would be created in folder "6367coverageLog".
 ```
 
 *Note:*
