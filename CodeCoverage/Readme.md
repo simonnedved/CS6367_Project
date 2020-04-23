@@ -12,7 +12,9 @@ cd target
 cp JavaAgent-1.0-SNAPSHOT.jar [destination]
 ```
 
-Get into the project folder which you want to test, then edit its pom.xml.
+Get into the project folder which you want to test, then edit its pom.xml. 
+
+
 If target test does not have maven-surefire-plugin, add following lines:
 
 ```
