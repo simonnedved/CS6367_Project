@@ -1,8 +1,8 @@
-<h1>Instruction for using CodeCoverage</h1>
+<h1>Instruction for using InvariantsInferrence</h1>
 
 In command line run:
 ```
-cd CodeCoverage
+cd InvariantsInferrence
 # these lines will create a JavaAgent jar file.
 mvn clean install
 ```
