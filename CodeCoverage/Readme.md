@@ -13,23 +13,31 @@ cp JavaAgent-1.0-SNAPSHOT.jar [destination]
 ```
 
 Get into the project folder which you want to test, then edit its pom.xml.
-Add follwing lines in pom.xml:
+If target test does not have maven-surefire-plugin, add following lines:
 
 ```
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <configuration>
-    <argLine>-javaagent:./JavaAgent-1.0-SNAPSHOT.jar
-    </argLine>
-   <properties>
-    <property>
-      <name>listener</name>
-      <value>cs6367Project.JUnitListener</value>
-    </property>
-   </properties>
+    <argLine>-javaagent:./JavaAgent-1.0-SNAPSHOT.jar</argLine>
+    <properties>
+      <property>
+        <name>listener</name>
+        <value>cs6367Project.JUnitListener</value>
+      </property></properties>
   </configuration>
 </plugin>
+```
+If target test already has maven-surefire-plugin, add following lines under configuration section:
+```
+<argLine>-javaagent:./JavaAgent-1.0-SNAPSHOT.jar</argLine>
+    <properties>
+      <property>
+        <name>listener</name>
+        <value>cs6367Project.JUnitListener</value>
+      </property></properties>
+      
 ```
 Modify JUnit version to 4.13:
 ```
