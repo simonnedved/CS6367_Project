@@ -13,6 +13,7 @@ cp JavaAgent-1.0-SNAPSHOT.jar [destination]
 ```
 
 Get into the project folder which you want to test, then edit its pom.xml.
+!!! Be sure add the JavaAgent-1.0-SNAPSHOT.jar path to javaagent section!!!
 If target test does not have maven-surefire-plugin, add following lines:
 
 ```
@@ -20,7 +21,7 @@ If target test does not have maven-surefire-plugin, add following lines:
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <configuration>
-    <argLine>-javaagent:./JavaAgent-1.0-SNAPSHOT.jar</argLine>
+    <argLine>-javaagent:[JavaAgent-1,0-SNAPSHOT path]/JavaAgent-1.0-SNAPSHOT.jar</argLine>
     <properties>
       <property>
         <name>listener</name>
