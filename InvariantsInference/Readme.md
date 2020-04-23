@@ -40,7 +40,6 @@ If target test already has maven-surefire-plugin, add following lines under conf
       
 ```
 
-```
 Modify JUnit version to 4.13:
 ```
 <dependency>
