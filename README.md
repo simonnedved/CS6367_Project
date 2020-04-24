@@ -9,7 +9,7 @@ JDK: Java SE Development Kit 9 -- [Download JDK](https://www.oracle.com/java/tec
 
 ASM: asm-all-6.0_BETA -- [ASM-6.0_Beta](https://github.com/simonnedved/CS6367_Project/tree/master/ASM/lib)
 
-JUnit: 
+JUnit: junit 4.13
 
 Java Agent: Included in JDK 9
 
