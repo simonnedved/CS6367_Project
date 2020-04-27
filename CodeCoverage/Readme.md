@@ -18,7 +18,7 @@ If target test does not have maven-surefire-plugin, add following lines:
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <configuration>
-    <argLine>-javaagent:[JavaAgent-1.0-SNAPSHOT path]/JavaAgent-1.0-SNAPSHOT.jar</argLine>
+    <argLine>-javaagent:[JavaAgent-1.0-SNAPSHOT.path]/JavaAgent-1.0-SNAPSHOT.jar</argLine>
     <properties>
       <property>
         <name>listener</name>
@@ -29,7 +29,7 @@ If target test does not have maven-surefire-plugin, add following lines:
 ```
 If target test already has maven-surefire-plugin, add following lines under configuration section:
 ```
-<argLine>-javaagent:[JavaAgent-1.0-SNAPSHOT path]/JavaAgent-1.0-SNAPSHOT.jar</argLine>
+<argLine>-javaagent:[JavaAgent-1.0-SNAPSHOT.path]/JavaAgent-1.0-SNAPSHOT.jar</argLine>
     <properties>
       <property>
         <name>listener</name>
