@@ -1,15 +1,10 @@
-<h1>Instruction for using CodeCoverage</h1>
+<h1>Instruction for using InvariantsInference</h1>
 
 In command line run:
 ```
-cd CodeCoverage
+cd InvariantsInference
 # these lines will create a JavaAgent jar file.
 mvn clean install
-```
-```
-# copy JavaAgent jar file to target project folder.
-cd target
-cp JavaAgent-1.0-SNAPSHOT.jar [destination]
 ```
 
 Get into the project folder which you want to test, then edit its pom.xml.
