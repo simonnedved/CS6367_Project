@@ -8,14 +8,14 @@ import java.security.ProtectionDomain;
 
 public class ClassTransformer implements ClassFileTransformer {
 
-    private final String packageName;
+    private final String path;
 
-    public ClassTransformer(String packageName) {
-        this.packageName = packageName;
+    public ClassTransformer(String path) {
+        this.path = path;
     }
 
     public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) {
-        if (className.startsWith(packageName)){
+        if (className.startsWith(path)){
             ClassReader cr = new ClassReader(classfileBuffer);
             ClassWriter cw = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
             ClassTransformVisitor ca = new ClassTransformVisitor(cw, className);
