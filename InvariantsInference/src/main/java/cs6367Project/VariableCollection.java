@@ -13,7 +13,7 @@ public class VariableCollection {
         if(className==null||methodName==null||variableName==null||variableType==null) return;
         {
             if(fieldSet==null){
-                fieldSet = new HashSet<String>();
+                fieldSet = new HashSet<>();
             }
             String str = saveToString(className,methodName,variableName,variableType,variableValue);
             fieldSet.add(str);
@@ -25,7 +25,7 @@ public class VariableCollection {
         if(className==null||methodName==null||variableName==null||variableType==null) return ;
         {
             if(localSet==null){
-                localSet = new HashSet<String>();
+                localSet = new HashSet<>();
             }
             String str = saveToString(className,methodName,variableName,variableType,variableValue);
             localSet.add(str);
@@ -33,19 +33,14 @@ public class VariableCollection {
     }
 
 
-
-
     public static String saveToString(String className, String methodName, String variableName, String variableType, String variableValue){
 
-        String sb= className.replaceAll(File.separator,".") + File.separator +
+        return className.replaceAll(File.separator,".") + File.separator +
                     methodName + File.separator +
                     variableName + File.separator +
                     variableType + File.separator +
                     variableValue+"\n";
-
-        return sb;
     }
-
 
 }
 

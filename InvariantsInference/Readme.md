@@ -1,8 +1,8 @@
-<h1>Instruction for using InvariantsInferrence</h1>
+<h1>Instruction for using CodeCoverage</h1>
 
 In command line run:
 ```
-cd InvariantsInferrence
+cd CodeCoverage
 # these lines will create a JavaAgent jar file.
 mvn clean install
 ```
@@ -13,33 +13,24 @@ cp JavaAgent-1.0-SNAPSHOT.jar [destination]
 ```
 
 Get into the project folder which you want to test, then edit its pom.xml.
-If target test does not have maven-surefire-plugin, add following lines:
+Add follwing lines in pom.xml:
 
 ```
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <configuration>
-    <argLine>-javaagent:[JavaAgent-1.0-SNAPSHOT path]/JavaAgent-1.0-SNAPSHOT.jar</argLine>
-    <properties>
-      <property>
-        <name>listener</name>
-        <value>cs6367Project.JUnitListener</value>
-      </property></properties>
+    <argLine>-javaagent:./JavaAgent-1.0-SNAPSHOT.jar
+    </argLine>
+   <properties>
+    <property>
+      <name>listener</name>
+      <value>cs6367Project.JUnitListener</value>
+    </property>
+   </properties>
   </configuration>
 </plugin>
 ```
-If target test already has maven-surefire-plugin, add following lines under configuration section:
-```
-<argLine>-javaagent:[JavaAgent-1.0-SNAPSHOT path]/JavaAgent-1.0-SNAPSHOT.jar</argLine>
-    <properties>
-      <property>
-        <name>listener</name>
-        <value>cs6367Project.JUnitListener</value>
-      </property></properties>
-      
-```
-
 Modify JUnit version to 4.13:
 ```
 <dependency>

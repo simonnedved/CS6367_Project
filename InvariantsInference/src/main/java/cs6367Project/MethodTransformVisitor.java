@@ -1,39 +1,34 @@
 package cs6367Project;
 
-
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
-import org.objectweb.asm.tree.FieldNode;
+import org.objectweb.asm.*;
+import org.objectweb.asm.tree.*;
 
 import java.util.List;
 
 class MethodTransformVisitor extends MethodVisitor implements Opcodes {
 
-    private String methodName;
-    private String[] variableNames;
     private String className;
+    private String methodName;
     private String description;
-    private FieldNode[] fields;
     private int access;
+    private String[] variableNames;
+    private List<FieldNode> fieldNodes;
 
-    public MethodTransformVisitor(final MethodVisitor mv, String className, String name, String desc, int access, String[] variableNames, List<FieldNode> fields) {
+
+    public MethodTransformVisitor(final MethodVisitor mv, String className, String methodName, String desc, int access, String[] variableNames, List<FieldNode> fieldNodes) {
         super(Opcodes.ASM5, mv);
-        this.methodName = name;
+        this.methodName = methodName;
         this.className = className;
         this.variableNames=variableNames;
         this.description=desc;
         this.access=access;
-        if (fields != null) {
-            this.fields = new FieldNode[fields.size()];
-            this.fields = fields.toArray(this.fields);
-        }
+        this.fieldNodes=fieldNodes;
     }
 
     @Override
     public void visitCode() {
-        if (fields != null) {
-            for (FieldNode field : fields) {
+        if (fieldNodes != null) {
+            for (FieldNode field : fieldNodes) {
                 if ((access & Opcodes.ACC_STATIC) != 0 || methodName.equals("<init>")) return;
                 boolean isStaticField = (field.access & Opcodes.ACC_STATIC) != 0;
                 record(field.desc,field.name,0,"visitFieldVariable", 0, isStaticField);

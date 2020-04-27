@@ -1,9 +1,9 @@
 package cs6367Project;
 
 import java.io.File;
-import java.io.FilenameFilter;
 import java.lang.instrument.Instrumentation;
 import java.util.HashSet;
+import java.util.Objects;
 
 
 public class Agent {
@@ -28,12 +28,7 @@ public class Agent {
         String outPath = null;
         String rootPath = "src" + File.separator + "main" + File.separator + "java";
         File root = new File(rootPath);
-        File[] list = root.listFiles(new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                return !name.equals(".DS_Store");
-            }
-        });
+        File[] list = root.listFiles((dir, name) -> !name.equals(".DS_Store"));
         HashSet<String> paths = new HashSet<String>();
         assert list != null;
         getAllPath(list, paths);
@@ -51,7 +46,7 @@ public class Agent {
     private static void getAllPath(File[] files, HashSet<String> paths) {
         for (File file : files) {
             if (file.isDirectory()) {
-                getAllPath(file.listFiles(), paths);
+                getAllPath(Objects.requireNonNull(file.listFiles()), paths);
             } else {
                 if(file.getName().endsWith(".java")){
                     String path = file.getParent();
